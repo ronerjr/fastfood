@@ -15,19 +15,22 @@ public class Pedido {
     return lanches;
   }
 
-  public boolean adicionaLanche(Lanche lanche) {
+  public void adicionaLanche(Lanche lanche) {
     if (lanches == null) {
       lanches = new ArrayList<>();
     }
-    return lanches.add(lanche);
+    lanches.add(lanche);
+    atualizaValorTotal();
   }
 
   public double getValorTotal() {
     return valorTotal;
   }
 
-  public void atualizaValorTotal(Lanche lanche) {
-    valorTotal += lanche.aplicarPromocoes(lanche.getPreco());
+  public void atualizaValorTotal() {
+    for(Lanche lanche : lanches) {
+      valorTotal += lanche.aplicarPromocoes();
+    }
   }
 
   public void limpaPedido() {

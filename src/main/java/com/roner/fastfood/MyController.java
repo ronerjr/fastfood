@@ -40,10 +40,10 @@ public class MyController {
   public ResponseEntity adicionarItem(@RequestBody Lanche lanche, @PathVariable Long mesa) {
     try {
       myService.adicionaItem(mesa, lanche);
-    } catch (Exception e) {
       return ResponseEntity.ok(lanche);
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
-    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
   }
 
   @GetMapping("/pedido/{mesa}")

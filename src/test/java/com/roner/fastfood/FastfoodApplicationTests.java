@@ -30,7 +30,7 @@ public class FastfoodApplicationTests {
     lanche.adicionaIngrediente(Ingrediente.HAMBURGUER);
     double valor = Ingrediente.BACON.getPreco() + Ingrediente.HAMBURGUER.getPreco()
         + Ingrediente.QUEIJO.getPreco() + Ingrediente.HAMBURGUER.getPreco();
-    double valorDoLancheComPromocao = lanche.aplicarPromocoes(lanche.getPreco());
+    double valorDoLancheComPromocao = lanche.aplicarPromocoes();
     assertEquals(valorDoLancheComPromocao, valor);
   }
 
@@ -47,7 +47,7 @@ public class FastfoodApplicationTests {
     lanche.adicionaIngrediente(Ingrediente.ALFACE);
     double valor = (Ingrediente.ALFACE.getPreco() + Ingrediente.HAMBURGUER.getPreco()
         + Ingrediente.QUEIJO.getPreco()) * 0.90;
-    double valorDoLancheComPromocao = lanche.aplicarPromocoes(lanche.getPreco());
+    double valorDoLancheComPromocao = lanche.aplicarPromocoes();
     assertEquals(valorDoLancheComPromocao, valor);
   }
 

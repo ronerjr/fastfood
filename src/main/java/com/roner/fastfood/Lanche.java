@@ -22,10 +22,11 @@ public class Lanche {
         ingredientes.stream().map(ingrediente -> ingrediente.getPreco()).reduce(0.0, Double::sum);
   }
 
-  public double aplicarPromocoes(double valor) {
+  public double aplicarPromocoes() {
+    double valor = getPreco();
     for (Promocoes promocao : Promocoes.values()) {
       if (promocao.isAtiva()) {
-        double valorSemPromocao = valor;
+        double valorSemPromocao = new Double(valor);
         valor = promocao.aplicarRegra(ingredientes, valor);
         if (valorSemPromocao != valor) {
           promocoesAplicadas.add(promocao.getNome());
