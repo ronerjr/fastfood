@@ -13,7 +13,7 @@ Available options:
 <li>x-burguer</li>
 <li>x-egg</li>
 <li>x-egg-bacon</li>
-
+<br>
 For add a sandwich in an order `localhost:8080/pedido/{table_number}/item` <br>
 Payload example: 
 `{
