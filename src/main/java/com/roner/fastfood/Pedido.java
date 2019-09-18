@@ -1,8 +1,11 @@
 package com.roner.fastfood;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Pedido {
   private List<Lanche> lanches;
   private double valorTotal;

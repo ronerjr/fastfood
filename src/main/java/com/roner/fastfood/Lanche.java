@@ -1,10 +1,13 @@
 package com.roner.fastfood;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Lanche {
   private String nome;
   private List<Ingrediente> ingredientes;
